@@ -1,5 +1,4 @@
 name: Create Medusa User
-
 on:
   push:
     branches:
