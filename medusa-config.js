@@ -77,9 +77,9 @@ const plugins = [
           successRedirect: `${process.env.ADMIN_URL}/`
         },
         store: {
-          callbackUrl: `${process.env.BACKEND_URL}/store/auth/oauth2/cb`,
-          failureRedirect: `${process.env.STORE_URL}/login`,
-          successRedirect: `${process.env.STORE_URL}/`
+          callbackUrl: `https://dsdds-1adm.onrender.com/store/auth/oauth2/cb`,
+          failureRedirect: `https://dsdds-1adm.onrender.com/login`,
+          successRedirect: `https://shop.ssangyongsports.eu.org/`
         },
       },
     ],
