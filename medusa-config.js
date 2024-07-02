@@ -1,6 +1,6 @@
 const dotenv = require("dotenv");
 
-let ENV_FILE_NAME = ""; 
+let ENV_FILE_NAME = "";
 switch (process.env.NODE_ENV) {
   case "production":
     ENV_FILE_NAME = ".env.production";
@@ -23,7 +23,7 @@ try {
 
 // CORS when consuming Medusa from admin
 const ADMIN_CORS =
-  process.env.ADMIN_CORS || "https://dsdds.vercel.app";
+  process.env.ADMIN_CORS || "http://localhost:7000,http://localhost:7001";
 
 // CORS to avoid issues when consuming Medusa from a client
 const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000";
@@ -76,15 +76,8 @@ const projectConfig = {
   store_cors: STORE_CORS,
   database_url: DATABASE_URL,
   admin_cors: ADMIN_CORS,
-  redis_url: process.env.REDIS_URL,
   // Uncomment the following lines to enable REDIS
   // redis_url: REDIS_URL
-  database_extra: process.env.NODE_ENV !== "development" ? 
-    {
-      ssl: {
-        rejectUnauthorized: false,
-      },
-    } : {},
 };
 
 /** @type {import('@medusajs/medusa').ConfigModule} */
